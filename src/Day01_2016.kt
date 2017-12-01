@@ -42,7 +42,9 @@ fun solution_day01_16(args: Array<String>): Int {
         point = goDirection(currentDirection, parseSteps(item), point[0], point[1])
     }
 
-    return hamiltonDistance(point)
+    val hamiltonDistance = hamiltonDistance(point)
+    println("${point.contentToString()} in Universe and $hamiltonDistance far away")
+    return hamiltonDistance
 
 }
 
