@@ -20,9 +20,8 @@ fun main(args: Array<String>) {
  */
 fun solution_day01(input: String, comparePosition: Int = 1): Int {
 
-    val inputArray = input.asIterable()
+    val inputArray = input
             .map { c: Char -> c.toString().toInt() }
-            .toIntArray()
 
     val sumArray: IntArray = inputArray
             .filterIndexed { index, value -> value == inputArray[findCompareIndex(index, comparePosition, inputArray.size)] }
