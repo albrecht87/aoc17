@@ -20,23 +20,19 @@ fun main(args: Array<String>) {
  */
 fun solution_day01(input: String, comparePosition: Int = 1): Int {
 
-    // prepare input ti list of Int
-    val intArray = input.asIterable().map { c: Char -> c.toString().toInt() }.toIntArray()
-    print("IntArray ${intArray.contentToString()}")
+    val inputArray = input.asIterable()
+            .map { c: Char -> c.toString().toInt() }
+            .toIntArray()
 
-    val sumArray : MutableList<Int> = mutableListOf()
-
-    for((index, value) in intArray.withIndex()){
-        if(value == intArray[findCompareIndex(index,comparePosition, intArray.size)])
-                sumArray.add(value)
-    }
-    print("SumArray ${sumArray.toIntArray().contentToString()}")
+    val sumArray: IntArray = inputArray
+            .filterIndexed { index, value -> value == inputArray[findCompareIndex(index, comparePosition, inputArray.size)] }
+            .toIntArray()
 
     return sumArray.sum()
 }
 
-fun findCompareIndex(left: Int, comparePosition:Int, length: Int) : Int {
-    return (left + comparePosition)%length
+fun findCompareIndex(left: Int, comparePosition: Int, length: Int): Int {
+    return (left + comparePosition) % length
 }
 
 /**
@@ -50,16 +46,8 @@ fun findCompareIndex(left: Int, comparePosition:Int, length: Int) : Int {
  * 123123 produces 12.
  * 12131415 produces 4.
  *
- *
- * 123425
- * 123425123425
- *
- * len 6
- * 1 - 5,4
- * 2 - 6,5
- * 3 -
  */
 fun solution_day02(input: String): Int {
 
-    return solution_day01(input, input.length/2)
+    return solution_day01(input, input.length / 2)
 }
