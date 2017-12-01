@@ -2,13 +2,18 @@ val puzzleInput = "9513446799636685297929646689682997114316733445451534532351778
 
 fun main(args: Array<String>) {
     val day011 = solution_day01(puzzleInput)
-    val day012 = solution_day02(puzzleInput)
+    val day012 = solution_day01b(puzzleInput)
+
+    val day01_16 = solve()
 
     println("Solution day01/01:")
     println("$day011")
+
     println("Solution day01/02:")
     println("$day012")
 
+    println("Solution day01 2016:")
+    println("$day01_16")
 }
 
 /**
@@ -46,7 +51,6 @@ fun findCompareIndex(left: Int, comparePosition: Int, length: Int): Int {
  * 12131415 produces 4.
  *
  */
-fun solution_day02(input: String): Int {
-
+fun solution_day01b(input: String): Int {
     return solution_day01(input, input.length / 2)
 }
