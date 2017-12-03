@@ -10,7 +10,7 @@ fun main(args: Array<String>) {
     println("$day012")
 
     val day02a = solution_day02a(day02input)
-    val day02b = solution_day02b(day02binput)
+    val day02b = solution_day02b(day02input)
 
     println("Solution day02a:")
     println("$day02a")
